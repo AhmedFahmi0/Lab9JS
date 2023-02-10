@@ -1,7 +1,22 @@
 function updateWatch(){
     var watch = document.getElementById("watch");
     watch.innerHTML = (new Date()).toLocaleTimeString();
+
 }
+var day = new Date().getDay();
+switch(day){
+  case 0:document.getElementById("sun").style.opacity=1;break;
+  case 1:document.getElementById("mon").style.opacity=1;break;
+  case 2:document.getElementById("tue").style.opacity=1;break;
+  case 3:document.getElementById("wed").style.opacity=1;break;
+  case 4:document.getElementById("thu").style.opacity=1;break;
+  case 5:document.getElementById("fri").style.opacity=1;break;
+  case 6:document.getElementById("sat").style.opacity=1;break;
+}
+var hrss=new Date().getHours();
+if (hrss>11 && hrss<=23) document.getElementById('m').innerHTML="PM"
+
+
 setInterval(updateWatch,1000);
 var set=document.getElementById("setAlarm");
 var popUp=document.getElementById("popUp");
